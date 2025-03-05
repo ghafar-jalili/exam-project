@@ -1,0 +1,99 @@
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219, 219, 219);
+    font-family: sans-serif;
+}
+.container{
+    box-shadow: 0px 0px 10px gray;
+    width:50%;
+    height:100vh;
+    position: relative;
+    overflow: auto;
+    display: none;
+    animation: top 300ms;
+}
+@keyframes top {
+    from{
+        margin-top: -600px;
+        opacity: 0.5;
+    }
+   to{
+        margin-top: 0px;
+        opacity: 1;
+    }  
+}
+.container h2{
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding:5px;
+    height: 40px;
+}
+.container .question{
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+button#btn{
+    padding: 4px 10px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    margin-left: 3px;
+    cursor: pointer;
+    transition: all linear 250ms;
+}
+button#btn:hover{
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+}
+.button{
+    padding: 5px 10px;
+    background-color:darkgreen;
+    color: white;
+    border: none;
+    z-index: 99;  
+    cursor: pointer;
+}
+input{
+    border: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    padding: 4px ;
+}
+#hid{
+    margin-top: 300px;
+}
+h2{
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+.check-btn{
+    padding: 5px 10px;
+    background-color:darkgreen;
+    color: white;
+    border: none;
+    z-index: 99;  
+    cursor: pointer;
+    margin: 10px;
+    margin-left: 40%;
+    
+}
+
