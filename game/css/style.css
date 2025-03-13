@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+    body {
+        background-image: linear-gradient(
+            to bottom, /* Direction of the gradient */
+            rgba(33, 33, 33, 0.551), /* Starting color */
+            rgba(25, 25, 25, 0.577) /* Ending color */
+        ), url("../img/210512.jpg"); /* Background image */
+        background-repeat: no-repeat;
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the background image */
+        position: relative;
+    }
+
+.resu{
+    background-color: transparent;
+        position: absolute;
+        top: 250px;
+        left:40%;
+        right: 50%;
+        z-index: 99;
+        width: 200px;
+        height: 80px;
+        color: black;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        padding-top: 15px;
+        border: 5px solid black;
+        animation: top 300ms ease-in-out forwards;
+        display: none;
+}
+@keyframes top {
+    0% {
+        transform: scale(2.5) rotate(0deg); /* Start with scale and no rotation */
+    }
+    30% {
+        transform: scale(1.8) rotate(10deg); /* Scale down and rotate slightly */
+    }
+    60% {
+        transform: scale(1.5) rotate(20deg); /* Return to normal size and rotate more */
+    }
+    100% {
+        transform: scale(1) rotate(30deg); /* Final state: normal size and fully rotated */
+    }
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    border-right: 5px solid gray;
+    display: flex;
+    position: relative;
+}
+
+.computer, .user {
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.computer {
+    border-right: 5px solid gray;
+}
+
+.user {
+    border-left: 5px solid gray;
+}
+
+.user h3, .computer h3 {
+    color: rgb(197, 131, 0);
+    font-size: 50px;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.351);
+    padding: 20px;
+    width: 100%;
+}
+
+.result1, .result2 {
+    color: rgb(0, 242, 255);
+}
+
+.result1 p, .result2 p {
+    margin-block: 20px;
+    font-size: 26px;
+    background-color: rgba(138, 0, 0, 0.725);
+    padding: 20px;
+}
+
+.result1 h1, .result2 h1 {
+    color: red;
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: transparent;
+    transition: all linear 250ms;
+    padding: 10px 20px;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: black;
+}
+
+.btn:active {
+    transform: scale(0.891);
+}
+
+span {
+    color: rgb(55, 235, 0);
+    font-weight: bold;
+}
+
+.passive {
+    pointer-events: none;
+    background-color: gray;
+    color: rgb(57, 55, 55);
+    border: 1px solid gray;
+}

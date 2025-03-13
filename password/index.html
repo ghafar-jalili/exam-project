@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="password_div">
+        <div class="password_header">
+            <h2>password generator</h2>
+        </div>
+        <div class="password_body">
+            <div class="password_input">
+                <input type="text" class="generate_input"> 
+                <i class="bi bi-copy"></i>
+                <span class="copied">copied</span>
+                <br>
+                <div class="lenght"></div>
+            </div>
+            <div class="password_setting">
+                <div class="password_length">
+                   <div class="lentgh_div">
+                    <h4>password lenght</h4>
+                    <p class="lenth_number">12</p>
+                   </div>
+                    <input type="range" class="lentgh1" min="8" max="16">
+                </div>
+                <h4 class="h4">password setting</h4>
+                <ul>
+                    <div>
+                    <li>
+                        <input type="checkbox" checked name="lowercase" id="lowercase">
+                        <label for="lowercase">lowercase(a-z)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="uppercase" id="uppercase">
+                        <label for="uppercase">uppercase(A-Z)</label>
+                    </li>
+                </div>
+            <div>
+                    <li>
+                        <input type="checkbox" name="symbol" id="symbol">
+                        <label for="symbol">Symbol(*@#...)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" checked name="numbers" id="numbers">
+                        <label for="numbers">numbers(0-9)</label>
+                    </li>
+                </div>
+                </ul>
+            </div>
+            <button class="generate">generate</button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

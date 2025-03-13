@@ -1,0 +1,39 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: black;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+h1{
+    font-size: 100px;
+}
+button{
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 1px solid red;
+    color: red;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 5px;
+    transition: all linear 250ms;
+}
+button:active{
+    transform: scale(0.81);
+}
+.re{
+    color: gray;
+    border-color: gray;
+}
+.de{
+    color: green;
+    border-color: green;
+}

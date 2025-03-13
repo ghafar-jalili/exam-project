@@ -1,0 +1,57 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    padding-top:150px ;
+}
+button.htmlbtn{
+    border-radius: 3px 3px 0px 0px;
+}
+button.htmlbtn ,button.cssbtn,button.jsbtn,button.phpbtn{
+    width: 600px;
+    height: 40px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid gray;
+    background-color: rgb(220, 220, 220);
+    transition: all linear 300ms;
+}
+button.phpbtn{
+    border-bottom: 0px;
+    border-radius: 0px 0px 3px 3px;
+}
+.htmlbtn::after,.cssbtn::after,.jsbtn::after,.phpbtn::after{
+    content: "\00276f";
+    transform: rotate(90deg);
+    transition: all linear 300ms;
+}
+
+.active::after{
+    content: "\00276f";
+    transform: rotate(270deg);
+}
+
+button.htmlbtn:hover ,button.cssbtn:hover,button.jsbtn:hover,button.phpbtn:hover,.active {
+    background-color: rgb(169, 168, 168);
+}
+div.html,.css,.js,.php{
+    width: 600px;
+    padding:0px 30px;
+    background-color: darkslateblue;
+    color: white;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 250ms linear;
+}

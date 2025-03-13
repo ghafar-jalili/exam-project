@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+
+div{
+    float: right;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    transition: all linear 300ms;
+    width: 0px;
+}
+.open{
+    width: 330px;
+}
+button{
+    width: 100px;
+    background-color: transparenta;
+    color: black;
+    cursor: pointer;
+    border: 1px solid black;
+    height: 30px;
+    display: flex;
+    transition: all linear 250ms;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+button:active{
+    transform: scale(0.83);
+}

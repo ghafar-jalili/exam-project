@@ -1,0 +1,139 @@
+/* Define custom properties for gradient positions */
+@property --gradient-1-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 47%;
+  }
+  
+  @property --gradient-1-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 33%;
+  }
+  
+  @property --gradient-2-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 82%;
+  }
+  
+  @property --gradient-2-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 65%;
+  }
+  
+  /* Background styles */
+  body {
+    background-color: #111927;
+    background-image: 
+      radial-gradient(at var(--gradient-1-x) var(--gradient-1-y), hsl(162.00, 77%, 40%) 0, transparent 59%), 
+      radial-gradient(at var(--gradient-2-x) var(--gradient-2-y), hsl(288.57, 100%, 40%) 0, transparent 55%);
+    animation: moveGradient 10s infinite alternate linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Keyframes to animate custom properties */
+  @keyframes moveGradient {
+    0% {
+      --gradient-1-x: 47%;
+      --gradient-1-y: 33%;
+      --gradient-2-x: 82%;
+      --gradient-2-y: 65%;
+    }
+    50% {
+      --gradient-1-x: 20%;
+      --gradient-1-y: 45%;
+      --gradient-2-x: 60%;
+      --gradient-2-y: 40%;
+    }
+    100% {
+      --gradient-1-x: 80%;
+      --gradient-1-y: 10%;
+      --gradient-2-x: 30%;
+      --gradient-2-y: 70%;
+    }
+  }
+  
+  /* Glassmorphism card effect */
+  .card {
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background-color: rgba(93, 93, 93, 0.37);
+    border-radius: 12px;
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* From Uiverse.io by Shoh2008 */ 
+.input {
+    -webkit-appearance: none;
+   /* remove default */
+    display: block;
+    margin: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+    box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
+    background-color: hsla(0,0%,0%,.2);
+    background-image: -webkit-radial-gradient( hsla(200,100%,90%,1) 0%, hsla(200,100%,70%,1) 15%, hsla(200,100%,60%,.3) 28%, hsla(200,100%,30%,0) 70% );
+    background-repeat: no-repeat;
+    -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
+      -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
+    outline: none;
+  }
+  
+  .input:checked {
+    -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
+      -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  .input:active {
+    -webkit-transform: scale(1.5);
+    -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  
+  
+  /* The up/down direction logic */
+  
+  .input,
+  .input:active {
+    background-position: 0 24px;
+  }
+  
+  .input:checked {
+    background-position: 0 0;
+  }
+  
+  .input:checked ~ .input,
+  .input:checked ~ .input:active {
+    background-position: 0 -24px;
+  }
+ .divs
+  {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    outline: none;
+    margin-top: 5px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: rgba(24, 24, 24, 0.156);
+    cursor: pointer;;
+  }
+  ::selection{
+    color: black;
+    background-color: transparent;
+  }
+  .divss{
+    border: 1px solid black;
+    background-color: rgba(24, 24, 24, 0.317);
+  }

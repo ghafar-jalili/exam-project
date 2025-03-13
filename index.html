@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Fira+Code:wght@300..700&family=Orbitron:wght@400..900&display=swap');
+        .charm-regular {
+            font-family: "Charm", cursive;
+            font-weight: bold;
+            font-style: normal;
+        }
+        * {
+            font-family: "Charm", cursive;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 250px;
+            background-color: beige;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        button {
+            box-shadow: 0px 0px 3px gray;
+            background-color: transparent;
+            border: 1px solid black;
+            padding: 10px 30px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all linear 250ms;
+            font-weight: bold;
+            margin-right: 2px;
+        }
+        button:active {
+            transform: scale(1.1);
+            background-color: orangered;
+            color: white; /* Improve text visibility */
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <h1>00:00:00</h1>
+    <div>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+    </div>
+    <script>
+        let counter = 0;
+        let seconds = 0;
+        let minutes = 0;
+        let houres = 0;
+        let timer = null;
+
+        const start = document.querySelector(".start");
+        const stop = document.querySelector(".stop");
+        const reset = document.querySelector(".reset");
+        const h1 = document.querySelector("h1");
+
+        function timehandler() {
+            counter++;
+            if (counter > 99) { // Increment every 100 milliseconds
+                counter = 0;
+                seconds++;
+                if (seconds > 59) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes > 59) {
+                        minutes = 0;
+                        houres++;
+                    }
+                }
+            }
+
+            // Format hours, minutes, and seconds
+            const formattedHoures = houres < 10 ? "0" + houres : houres;
+            const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+            const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+            h1.innerHTML = formattedHoures + ":" + formattedMinutes + ":" + formattedSeconds;
+        }
+
+        start.addEventListener("click", () => {
+            if (!timer) { 
+                timer = setInterval(timehandler, 10);
+            }
+        });
+
+        stop.addEventListener("click", () => {
+            clearInterval(timer);
+            timer = null;
+        });
+
+        reset.addEventListener("click", () => {
+            clearInterval(timer);
+            timer = null; 
+            counter = 0;
+            seconds = 0;
+            minutes = 0;
+            houres = 0;
+            h1.innerHTML = "00:00:00";
+        });
+    </script>
+</body>
+</html>
